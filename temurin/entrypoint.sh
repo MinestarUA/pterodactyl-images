@@ -30,7 +30,6 @@ echo -e "
 Maintained and adapted by Minestar (https://minestar.com.ua) for Pterodactyl."
 
 # Replace variables in the startup command.
-# shellcheck disable=SC2086
 MODIFIED_STARTUP=$(echo -e ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')
 
 # Print the modified startup command.
@@ -39,5 +38,4 @@ STARTUP /home/container: ${MODIFIED_STARTUP}
 "
 
 # Run the startup command.
-# shellcheck disable=SC2086
 eval ${MODIFIED_STARTUP}
